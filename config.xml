@@ -4,7 +4,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "edu.uab.business.studentapp"
         versionCode = "1" 
-        version     = "0.0.1" >
+        version     = "0.0.2" >
 
     <!-- versionCode is optional and Android only -->
 
@@ -19,7 +19,7 @@
     </author>
     
     <preference name="phonegap-version" value="cli-6.1.0" />
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+<!--    <gap:plugin name="cordova-plugin-whitelist" source="npm" />-->
     <gap:plugin name="cordova-plugin-camera" source="npm" />
     <access origin="*" />
 
