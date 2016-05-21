@@ -5,8 +5,9 @@
     <title>Plugin Test</title>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script>
+        var objContact;
         var picturesource;
-var destinationtype;
+        var destinationtype;
 
 document.addEventListener("deviceready",onDeviceReady,false);
 
@@ -14,6 +15,19 @@ function onDeviceReady()
 {
     picturesource = navigator.camera.PictureSourceType;
     destinationtype = navigator.camera.DestinationType;
+    objContact = navigator.contacts.create();
+}
+
+function PickContact()
+{
+    navigator.contacts.pickContact(function(contact)
+        {
+            alert("The following contact has been selected: " + JSON.stringify(contact));
+        }, function(err)
+        {
+            alert("Error: " + err);
+        }
+        );
 }
 
 function onPhotoDataSuccess(imagedata)
@@ -44,9 +58,14 @@ function onFail(message)
 </head>
 
 <body>
+    <br>
+    <br>
         <button onclick="CapturePhoto()">Take Picture</button>
         <img id="smallImage" src-"" />
         <img id="largeImage" src="" />
+        <br>
+        <br>
+        <button onclick="PickContact()">Pick A Contact</button>
 
 
 </body>
