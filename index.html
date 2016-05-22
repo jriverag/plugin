@@ -25,10 +25,11 @@ function PickContact()
             var contactinfo = ""
             if (contact.displayName !== null)
             {
-                contactinfo = contact.displayName + "<br>";
-            }else
+                contactinfo += contact.displayName + "<br>";
+            }
+            
             {
-                contact.name.givenName + " " + contact.name.familyName + "<br>";
+                contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
             }
             var count = 0;
             if (contact.phoneNumbers !== null)
