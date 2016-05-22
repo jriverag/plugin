@@ -22,7 +22,15 @@ function PickContact()
 {
     navigator.contacts.pickContact(function(contact)
         {
-            var contactinfo = contact.name.givenName + " " + contact.name.familyName + "<br>";
+            var contactinfo = ""
+            if (contact.displayName !== null)
+            {
+                contactinfo = contact.displayName + "<br>";
+            }else
+            {
+                contact.name.givenName + " " + contact.name.familyName + "<br>";
+            }
+            //contact.name.givenName + " " + contact.name.familyName + "<br>";
             var count = 0;
             if (contact.phoneNumbers.length > 0)
             {
