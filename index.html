@@ -23,7 +23,7 @@ function PickContact()
     navigator.contacts.pickContact(function(contact)
         {
             var output = JSON.parse(contact);
-            document.getElementById("contactname").innerHTML = output.contactFields.displayName;
+            document.getElementById("contactname").innerHTML = output.fieldType.displayName;
             alert("The following contact has been selected: " + JSON.stringify(contact));
         }, function(err)
         {
