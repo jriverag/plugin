@@ -22,9 +22,9 @@ function PickContact()
 {
     navigator.contacts.pickContact(function(contact)
         {
-            var contactinfo = contact.name.givenName + " " + contact.name.familyName + "<br>";
+            var contactinfo = contact.name.givenName + " " + contact.name.familyName + " ";
             //contactinfo += contact.name.phonenumbers[0].value + "<br>";
-            //contactinfo += contact.emails[0].value;
+            contactinfo += contact.emails[0].value;
             document.getElementById("contactname").innerHTML = contactinfo;
             alert("The following contact has been selected: " + JSON.stringify(contact));
         }, function(err)
