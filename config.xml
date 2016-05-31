@@ -19,8 +19,8 @@
     </author>
     
     <preference name="phonegap-version" value="cli-6.1.0" />
-    <gap:plugin name="cordova-plugin-contacts" source="npm" />
-    <gap:plugin name="cordova-plugin-camera" source="npm" />
+    <plugin name="cordova-plugin-contacts" source="npm" />
+    <plugin name="cordova-plugin-camera" source="npm" />
     <access origin="*" />
 
 
