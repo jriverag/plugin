@@ -22,6 +22,10 @@
     <plugin name="cordova-plugin-contacts" source="npm" />
     <plugin name="cordova-plugin-camera" source="npm" />
     <access origin="*" />
+    
+    <config-file platform="android" parent="/manifest">
+        <application android:debuggable="true" />
+    </config-file>
 
 
 </widget>
