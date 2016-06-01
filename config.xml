@@ -23,9 +23,4 @@
     <plugin name="cordova-plugin-camera" source="npm" />
     <access origin="*" />
     
-    <gap:config-file platform="android" parent="/manifest">
-        <application android:debuggable="true" />
-    </gap:config-file>
-
-
 </widget>
