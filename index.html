@@ -11,11 +11,6 @@
 
 document.addEventListener("deviceready",onDeviceReady,false);
 
-if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-{
-    WebView.setWebContentsDebuggingEnabled(true);
-}
-
 function onDeviceReady()
 {
     picturesource = navigator.camera.PictureSourceType;
