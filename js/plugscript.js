@@ -52,7 +52,7 @@ function onPhotoURISuccess(imageURI)
 
 function CapturePhoto()
 {
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URI });
+    navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URI });
     
 }
 
