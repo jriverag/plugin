@@ -39,7 +39,8 @@ function onPhotoDataSuccess(imagedata)
 {
     var picture = document.getElementById("smallImage");
     //smallImage.style.display = 'block';
-    picture.src = "data:image/jpeg;base64," + imagedata;
+    //picture.src = "data:image/jpeg;base64," + imagedata;
+    picture.src = "images/MoonEarth.png";
 }
 
 function onPhotoURISuccess(imageURI)
