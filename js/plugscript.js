@@ -37,21 +37,21 @@ function PickContact()
 
 function onPhotoDataSuccess(imagedata)
 {
-    var smallImage = document.getElementById("smallImage");
-    smallImage.style.display = 'block';
-    smallImage.src = "data:image/jpeg;base64," + imagedata;
+    var picture = document.getElementById("smallImage");
+    //smallImage.style.display = 'block';
+    picture.src = "data:image/jpeg;base64," + imagedata;
 }
 
 function onPhotoURISuccess(imageURI)
 {
     var largeImage = document.getElementById("largeImage");
-    largeImage.style.display = 'block';
+    //largeImage.style.display = 'block';
     largeImage.src = imageURI;
 }
 
 function CapturePhoto()
 {
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, destinationtype: destinationtype.DATA_URL });
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, destinationtype: destinationtype.FILE_URI });
     
 }
 
