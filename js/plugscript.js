@@ -1,15 +1,15 @@
-function FoundContact(contact)
+function onSuccess(item)
     {
-        alert("Found Contacts" + JSON.stringify(contact));
+        alert("Found Contacts" + JSON.stringify(item));
     }
-function NoContact(err)
+function onError(err)
     {
         alert("Error: " + err);
     }
 
 function PickContact()
 {
-    navigator.contacts.pickcontacts(FoundContact,NoContact);
+    navigator.contacts.pickcontacts(onSuccess,onError);
 }
     //navigator.contacts.pickContact(function(contact)
     //    {
