@@ -1,6 +1,14 @@
 function PickContact()
 {
     navigator.contacts.pickcontacts(FoundContact(contact),NoContact(err));
+    function FoundContact(contact)
+    {
+        alert("Found Contacts" + JSON.stringify(contact));
+    }
+    function NoContact(err)
+{
+    alert("Error: " + err);
+}
     //navigator.contacts.pickContact(function(contact)
     //    {
     //        var contactinfo = "";
@@ -36,10 +44,10 @@ function PickContact()
     //    );
 }
 
-function FoundContact(contact)
-    {
-        alert("Found Contacts" + JSON.stringify(contact));
-    }
+//function FoundContact(contact)
+//    {
+//        alert("Found Contacts" + JSON.stringify(contact));
+//    }
 //    var contactinfo = "";
 //    if (contact.displayName !== null)
 //    {
@@ -68,10 +76,10 @@ function FoundContact(contact)
 //    alert("The following contact has been selected: " + JSON.stringify(contact));
 //}
 //
-function NoContact(err)
-{
-    alert("Error: " + err);
-}
+//function NoContact(err)
+//{
+//    alert("Error: " + err);
+//}
 
 function onPhotoURISuccess(imageURI)
 {
