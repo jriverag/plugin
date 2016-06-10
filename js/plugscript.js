@@ -1,16 +1,16 @@
-    function FoundContact(contact)
+function FoundContact(contact)
     {
         alert("Found Contacts" + JSON.stringify(contact));
     }
-    function NoContact(err)
-{
-    alert("Error: " + err);
-}
+function NoContact(err)
+    {
+        alert("Error: " + err);
+    }
 
 function PickContact()
 {
-    navigator.contacts.pickcontacts(FoundContact(contact),NoContact(err));
-
+    navigator.contacts.pickcontacts(FoundContact,NoContact);
+}
     //navigator.contacts.pickContact(function(contact)
     //    {
     //        var contactinfo = "";
@@ -44,7 +44,7 @@ function PickContact()
     //        alert("Error: " + err);
     //    }
     //    );
-}
+//}
 
 //function FoundContact(contact)
 //    {
