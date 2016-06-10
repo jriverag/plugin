@@ -1,6 +1,3 @@
-function PickContact()
-{
-    navigator.contacts.pickcontacts(FoundContact(contact),NoContact(err));
     function FoundContact(contact)
     {
         alert("Found Contacts" + JSON.stringify(contact));
@@ -9,6 +6,11 @@ function PickContact()
 {
     alert("Error: " + err);
 }
+
+function PickContact()
+{
+    navigator.contacts.pickcontacts(FoundContact(contact),NoContact(err));
+
     //navigator.contacts.pickContact(function(contact)
     //    {
     //        var contactinfo = "";
