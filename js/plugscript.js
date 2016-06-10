@@ -1,6 +1,6 @@
 function PickContact()
 {
-    navigator.contacts.pickcontacts(FoundContact(contact),NoContact(err));
+    navigator.contacts.pickcontacts(FoundContact,NoContact);
     //navigator.contacts.pickContact(function(contact)
     //    {
     //        var contactinfo = ""
@@ -36,39 +36,39 @@ function PickContact()
     //    );
 }
 
-function FoundContact(contactitem)
+function FoundContact(contact)
 {
     var contactinfo = "";
-    if (contactitem.displayName !== null)
+    if (contact.displayName !== null)
     {
-        contactinfo += contactitem.displayName + "<br>";
+        contactinfo += contact.displayName + "<br>";
     }
     else
     {
-        contactinfo += contactitem.name.givenName + " " + contactitem.name.familyName + "<br>";
+        contactinfo += contact.name.givenName + " " + contact.name.familyName + "<br>";
     }
     var count = 0;
-    if (contactitem.phoneNumbers !== null)
+    if (contact.phoneNumbers !== null)
     {
-        for (count=0; count < contactitem.phoneNumbers.length; count++)
+        for (count=0; count < contact.phoneNumbers.length; count++)
         {
-            contactinfo += contactitem.phoneNumbers[count].type + ": " + contactitem.phoneNumbers[count].value + "<br>";
+            contactinfo += contact.phoneNumbers[count].type + ": " + contact.phoneNumbers[count].value + "<br>";
         }
     }
-    if (contactitem.emails !== null)
+    if (contact.emails !== null)
     {
-        for(count=0; count < contactitem.emails.length; count++)
+        for(count=0; count < contact.emails.length; count++)
         {
-            contactinfo += contactitem.emails[count].type + ": " + contactitem.emails[count].value + "<br>";
+            contactinfo += contact.emails[count].type + ": " + contact.emails[count].value + "<br>";
         }
     }
     document.getElementById("contactname").innerHTML = contactinfo;
-    alert("The following contact has been selected: " + JSON.stringify(contactitem));
+    alert("The following contact has been selected: " + JSON.stringify(contact));
 }
 
-function NoContact(message)
+function NoContact(err)
 {
-    alert("Error: " + message);
+    alert("Error: " + err);
 }
 
 function onPhotoURISuccess(imageURI)
