@@ -2,14 +2,14 @@ function onSuccess(item)
     {
         alert("Found Contacts" + JSON.stringify(item));
     }
-function onError(err)
+function onError(message)
     {
-        alert("Error: " + err);
+        alert("Error: " + message);
     }
 
 function PickContact()
 {
-    navigator.contacts.pickcontacts(onSuccess,onError);
+    navigator.contacts.pickcontacts(function(contact){onSuccess(contact);},function(err){onError(err);});
 }
     //navigator.contacts.pickContact(function(contact)
     //    {
